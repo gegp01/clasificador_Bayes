@@ -1,11 +1,10 @@
+<div style "background="green";">
 ## Compilador de datos para el análisis de COVID-19 en México.
-
-#### 1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción
+</div>
+#### 1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción:
 
 ```markdown
-
 source("datos_DGE.R")
-
 ```
 El código cosecha la información oficial, guarda una copia y la almacena en un directorio local. El documento <i>datos_DGE.R</i> tiene las siguientes instrucciones, que se ejecutan al leer el archivo desde la dirección url.
 
