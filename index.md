@@ -1,32 +1,46 @@
-## Welcome to GitHub Pages
+## Compilador de datos para el análisis de COVID-19 en México.
 
-You can use the [editor on GitHub](https://github.com/gegp01/clasificador_Bayes/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### 1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+source("datos_DGE.R")
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+El código cosecha la información oficial, guarda una copia y la almacena en un directorio local. El documento <i>datos_DGE.R</i> tiene las siguientes instrucciones, que se ejecutan al leer el archivo desde la dirección url.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+``` markdown
+# CREAR UN DIRECTORIO TEMPORAL
+  td = tempdir()
+
+# create the placeholder file
+# GENERAR UN ARCHIVO TEMPORAL
+  tf = tempfile(tmpdir=td, fileext=".zip")
+
+# DESCARGAR LOS DATOS DEL URL EN EL ARCHIVO TEMPORAL
+  download.file("http://datosabiertos.salud.gob.mx/gobmx/salud/datos_abiertos/datos_abiertos_covid19.zip", tf)
+  #download.file("http://epidemiologia.salud.gob.mx/gobmx/salud/datos_abiertos/datos_abiertos_covid19.zip", tf)
+  # download.file("http://187.191.75.115/gobmx/salud/datos_abiertos/datos_abiertos_covid19.zip", tf) # cambio la dirección! 31/jul/2020
+
+# LEER EL NOMBRE DEL PRIMER DOCUMENTO EN EL ARCHIVO ZIP.
+  fname = unzip(tf, list=TRUE)$Name[1]
+
+# EXTRAER EL DOCUMENTO Y GUARDARLO EN EL DIRECTORIO TEMPORAL
+  unzip(tf, files=fname, exdir=td, overwrite=TRUE)
+
+# OBTENER LA RUTA AL DOCUMENTO (fpath)
+  fpath = file.path(td, fname)
+
+# LEER LAS PRIMERAS FILAS DEL DOCUMENTO EN fpath PARA SABER SUS DIMENSIONES (filas, coumnas) 
+  d = read.csv(fpath, header=TRUE, row.names=NULL, stringsAsFactors=FALSE, nrows=10) 
+  q<-ncol(d) # NUMERO DE COLUMNAS EN EL DOCUMENTO
+
+# LEER TODO EL DOCUMENTO, ASIGNANDO LA CLASE CARACTER PARA TODAS LAS COLUMNAS. ESTO PERMITE MANTENER LA INTEGRIDAD DEL CODIGO DE MUNICIPIO (MUCIPIO_OFICIA)
+  covid = read.csv(fpath, header=TRUE, row.names=NULL, stringsAsFactors=FALSE, colClasses=c(rep("character",q))) 
+
+  print("LISTO! LOS DATOS ESTÁN EN EL DATAFRAME covid")
+
+```
 
 ### Jekyll Themes
 
