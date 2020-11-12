@@ -1,4 +1,4 @@
-<div style "background="green";">
+<div style = "background="green";">
 ## Compilador de datos para el análisis de COVID-19 en México.
 </div>
 #### 1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción:
