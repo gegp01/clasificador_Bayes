@@ -35,7 +35,7 @@
             margin-bottom: 1.6em;
             max-width: 100%;
             overflow: auto;
-            padding: 1em 1.5em;
+            padding: 1em 1em;
             display: block;
             word-wrap: break-word;
             }
@@ -50,7 +50,7 @@
     <figure>
         <figcaption> 1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción:</figcaption>
         <pre>
-        <code style="max-width:800px; margin:auto;">
+        <code>
         source("https://gegp01.github.io/clasificador_Bayes/R/datos_DGE.R")
         </code>
         </pre>
@@ -68,8 +68,9 @@
 # GENERAR UN ARCHIVO TEMPORAL
     tf = tempfile(tmpdir=td, fileext=".zip")
 
-# DESCARGAR LOS DATOS DEL URL EN EL ARCHIVO TEMPORAL
-    download.file("http://datosabiertos.salud.gob.mx/gobmx/salud/datos_abiertos/datos_abiertos_covid19.zip", tf)
+# DESCARGAR LOS DATOS OFICIALES EN EL ARCHIVO TEMPORAL
+    url.ofical<-"http://datosabiertos.salud.gob.mx/gobmx/salud/datos_abiertos/datos_abiertos_covid19.zip"
+    download.file(url.oficial, tf)
 
 # LEER EL NOMBRE DEL PRIMER DOCUMENTO EN EL ARCHIVO ZIP.
     fname = unzip(tf, list=TRUE)$Name[1]
@@ -84,8 +85,10 @@
     d = read.csv(fpath, header=TRUE, row.names=NULL, stringsAsFactors=FALSE, nrows=10) 
     q<-ncol(d) # NUMERO DE COLUMNAS EN EL DOCUMENTO
 
-# LEER TODO EL DOCUMENTO, ASIGNANDO LA CLASE CARACTER PARA TODAS LAS COLUMNAS. ESTO PERMITE MANTENER LA INTEGRIDAD DEL CODIGO DE MUNICIPIO (MUCIPIO_OFICIA)
-    covid = read.csv(fpath, header=TRUE, row.names=NULL, stringsAsFactors=FALSE, colClasses=c(rep("character",q))) 
+# LEER TODO EL DOCUMENTO, ASIGNANDO LA CLASE CARACTER PARA TODAS LAS COLUMNAS.
+# ESTO PERMITE MANTENER LA INTEGRIDAD DEL CODIGO DE MUNICIPIO (MUCIPIO_OFICIA)
+    covid = read.csv(fpath, header=TRUE, row.names=NULL
+            , stringsAsFactors=FALSE, colClasses=c(rep("character",q))) 
 
     print("LISTO! LOS DATOS ESTÁN EN EL DATAFRAME covid")
          </code>
