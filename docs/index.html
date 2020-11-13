@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>datos</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <head>
+        <title>datos</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
-    <style>
+        <style>
+            
+            .card {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                background:#f4f6f7;
+            }
 
-    	.card {
-    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    		background:#f4f6f7;
-    	}
+            .card:hover {
+                background:white;
+            }
 
-    	.card:hover {
-    		background:white;
-    	}
-      
-      .indented {
-      padding-left: 3%;
-      padding-right: 0.5%;
-      }
-        
-      pre {
-        background: #3e484f;
-        border: 1px solid #ddd;
-        // border-left: 3px solid #f36d33;
-        color: white;
-        page-break-inside: avoid;
-        font-family: monospace;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 1.6em;
-        max-width: 100%;
-        overflow: auto;
-        padding: 1em 1.5em;
-        display: block;
-        word-wrap: break-word;
-        }
-        
-    </style>
+          .indented {
+          padding-left: 3%;
+          padding-right: 0.5%;
+          }
 
-</head>
+          pre {
+            background: #3e484f;
+            border: 1px solid #ddd;
+            // border-left: 3px solid #f36d33;
+            color: white;
+            page-break-inside: avoid;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+            }
+
+        </style>
     
-<body>
+    </head>
+    <body>
     
-<div><h4>Compilador de datos para el análisis de COVID-19 en México</h4>
-    
-    
-1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción:
+<div style="max-width:800px;"><h4>Compilador de datos para el análisis de COVID-19 en México</h4>
 
     <figure>
-        <figcaption>"Código en R para cosechar los datos de la Dirección General de Eṕidemiología"</figcaption>
+        <figcaption>1. Para cosechar los datos del reporte de diario de la Dirección general de Epidemiología se puede utilizar la siguiente instrucción.
+            El código en la url se puede ver aqui: </figcaption>
         <pre>
         <code>
         source("https://gegp01.github.io/clasificador_Bayes/R/datos_DGE.R")
@@ -60,10 +57,10 @@
         </pre>
     </figure>
 
-    <div style ="background-color: #3e484f;">source("datos_DGE.R")</div>
-</div>
-</body>
 
+
+    </div>
+    </body>
 </html>
 
 
