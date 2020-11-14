@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>datos</title>
+        <title>Análisis COVID-19</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width">
@@ -53,45 +53,38 @@
     
     </head>
     <body>
-    
-<div class="indented" style="max-width:800px;"><h3>Compilador de datos para el análisis de COVID-19 en México</h3>
         <img class="sticky" width=100vh alt="R logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/512px-R_logo.svg.png">
-  
-    <br><br>
-    <figure>
-        <figcaption><h5> 1. Acceso a los datos del reporte de diario de la Dirección general de Epidemiología</h5>
-        El código en 
-            <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/datos_DGE.R" target=_blank>datos_DGE.R</a>
-            cosecha la información oficial, guarda una copia y la almacena en un directorio local.
-        </figcaption>
-        <pre>
         
-    <code>
-    source("https://gegp01.github.io/clasificador_Bayes/R/datos_DGE.R")
-    </code>
-    
-        </pre>
-    </figure>
-    
-    
-    <br>
-    <figure>
-        <figcaption><h5> 2. Agregar los datos por municipio </h5> El código en 
-            <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/covid_municipios.R" target=_blank>covid_municipios.R</a> agrega los datos en el dataframe covid a nivel de municipio.
-            Para ello, utiliza el municipio de residencia de los pacientes a quienes identifica como infectado por SARS-CoV-2, no infectado, deceso o recuperado. 
-            Para cada municipio se reportan los casos acumulados, en los últimos 20 y 30 días, y el número de casos por cada 10 mil habitantes.
-        </figcaption>
-        <pre>
-        
-    <code>
-    source("https://gegp01.github.io/clasificador_Bayes/R/covid_municipios.R")
-    </code>
-    
-        </pre>
-    </figure>
-    
+        <div class="indented" style="max-width:800px;"><h3>Compilador de datos para el análisis de COVID-19 en México</h3>
+            <br>
+            <figure>
+                <figcaption><h5> 1. Acceso a los datos del reporte de diario de la Dirección general de Epidemiología</h5>
+                El código en 
+                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/datos_DGE.R" target=_blank>datos_DGE.R</a>
+                    cosecha la información oficial, guarda una copia y la almacena en un directorio local.
+                </figcaption>
+                <pre>
+            <code>
+            source("https://gegp01.github.io/clasificador_Bayes/R/datos_DGE.R")
+            </code>
+                </pre>
+            </figure>
+
+            <br>
+            <figure>
+                <figcaption><h5> 2. Agregar los datos por municipio </h5> El código en 
+                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/covid_municipios.R" target=_blank>covid_municipios.R</a> agrega los datos en el dataframe covid a nivel de municipio.
+                    Para ello, utiliza el municipio de residencia de los pacientes a quienes identifica como infectado por SARS-CoV-2, no infectado, deceso o recuperado. 
+                    Para cada municipio se reportan los casos acumulados, en los últimos 20 y 30 días, y el número de casos por cada 10 mil habitantes.
+                </figcaption>
+                <pre>
+            <code>
+            source("https://gegp01.github.io/clasificador_Bayes/R/covid_municipios.R")
+            </code>
+                </pre>
+            </figure>
             
-    </div>
+        </div>
     </body>
 </html>
 
