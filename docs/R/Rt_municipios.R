@@ -4,7 +4,8 @@
 #
 # ANTES DE INICIAR, SE REQUIREN LOS ARCHIVO mun.rds, que se genera con la instrucciónes: (1) y (2) en https://gegp01.github.io/clasificador_Bayes/ 
 #
-
+# LIBRERIAS DE R
+require(EpiEstim)
 
 # CALCULAR TASA DE CRECIMIENTO (INFECTADOS HOY/INFECTADOS AYER)
       
@@ -13,7 +14,6 @@
 
 # CALCULA Rt PARA TODO EL PAIS
 #  
-#  require(EpiEstim)
 #  t_start<-seq(2, length(colSums(x4))-10)
 #  t_end<-t_start + 10
 #  
