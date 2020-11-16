@@ -38,4 +38,8 @@
 # LEER TODO EL DOCUMENTO, ASIGNANDO LA CLASE CARACTER PARA TODAS LAS COLUMNAS. ESTO PERMITE MANTENER LA INTEGRIDAD DEL CODIGO DE MUNICIPIO (MUCIPIO_OFICIA)
   covid = read.csv(fpath, header=TRUE, row.names=NULL, stringsAsFactors=FALSE, colClasses=c(rep("character",q))) 
 
-  print("LISTO! LOS DATOS ESTÁN EN EL DATAFRAME covid")
+# Activar este comando si se quiere guardar una copia de los datos oficiales.
+  # saveRDS(covid, paste("DatosOficiales_", Sys.Date(), ".rds", sep="")) 
+ 
+ print("LISTO! LOS DATOS ESTÁN EN EL DATAFRAME covid")
+
