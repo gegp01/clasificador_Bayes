@@ -39,7 +39,7 @@ require(EpiEstim)
     mean(y[['R']][["Median(R)"]])
   }
 
-
+# EJECUTAR LA FUNCION f1, CON LOS VALORES DE INCIO Y FIN DE LA VENTANA DE TIEMPO QUE SE ANÁLIZA (= 10 DIAS)
   t_start<-seq(2, length(colSums(x4))-10)
   t_end<-t_start + 10
 
