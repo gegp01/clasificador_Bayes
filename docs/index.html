@@ -73,9 +73,9 @@
             <br>
             <figure>
                 <figcaption><h5> 2. Agregar los datos por municipio </h5> El código en 
-                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/covid_municipios.R" target=_blank>covid_municipios.R</a> agrega los datos en el dataframe covid a nivel de municipio.
+                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/covid_municipios.R" target=_blank>covid_municipios.R</a> agrega los datos del dataframe covid a nivel de municipio y los almacena en el dataframe mun.
                     Para ello, utiliza el municipio de residencia de los pacientes a quienes identifica como infectado por SARS-CoV-2, no infectado, deceso o recuperado. 
-                    Para cada municipio se reportan los casos acumulados, en los últimos 20 y 30 días, y el número de casos por cada 10 mil habitantes.
+                    En el dataframe mun se reportan los casos acumulados, en los últimos 20 y 30 días, y el número de casos por cada 10 mil habitantes.
                 </figcaption>
                 <pre>
             <code>
@@ -87,8 +87,8 @@
              <br>
             <figure>
                 <figcaption><h5> 3. Analizar el incremento de contagios (Rt) por municipio </h5> El código en 
-                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/Rt_municipios.R" target=_blank>Rt_municipios.R</a> se analizan los datos del archivo NODOS, generado con en covid_municipios.R.
-                    Los valores estimados de Rt se incorporan al archivo mun.rds.
+                    <a href="https://github.com/gegp01/clasificador_Bayes/blob/main/docs/R/Rt_municipios.R" target=_blank>Rt_municipios.R</a> se analizan los datos del dataframe covid y mun, generados con las instrucciones 1 y 2.
+                    Los valores estimados de Rt se incorporan y guardan en el doumento mun.rds.
                 </figcaption>
                 <pre>
             <code>
