@@ -106,7 +106,8 @@
       
       mun$FECHA_ACTUALIZACION<-rep(covid$FECHA_ACTUALIZACION[1], nrow(mun))
       
-      nodos<-data.frame(mun, gmx.hoy.sorted, z.max.sorted, z.mean.sorted)
+#      nodos<-data.frame(mun, gmx.hoy.sorted, z.max.sorted, z.mean.sorted)
+      nodos<-data.frame(mun)
       saveRDS(nodos, "NODOS.rds")
       write.csv(nodos, "NODOS.csv")
       
