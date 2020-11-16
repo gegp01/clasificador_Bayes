@@ -106,13 +106,12 @@
       
       mun$FECHA_ACTUALIZACION<-rep(covid$FECHA_ACTUALIZACION[1], nrow(mun))
       
-#      nodos<-data.frame(mun, gmx.hoy.sorted, z.max.sorted, z.mean.sorted)
       nodos<-data.frame(mun)
-      saveRDS(nodos, "NODOS.rds")
-      write.csv(nodos, "NODOS.csv")
+      saveRDS(nodos, "mun.rds")
+      write.csv(nodos, "mun.csv")
       
 # SIGUEN:
-
+  #      nodos<-data.frame(mun, gmx.hoy.sorted, z.max.sorted, z.mean.sorted)
   # 3. AGREGAR DATOS DEMOGRÁFICOS DEL CENSO DE POBLACION Y VIVIENDA DEL 2010 (INEGI). source("mun_iter.R")
   
   # 4. CALCULAR EL INCREMENTO DE CONTAGIOS POR MUNICIPIO Y AGREGARLO EN LA BASE DE DATOS mun. source("Rt.R")
