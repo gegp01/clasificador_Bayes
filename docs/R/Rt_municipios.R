@@ -39,6 +39,10 @@ require(EpiEstim)
     mean(y[['R']][["Median(R)"]])
   }
 
+
+  t_start<-seq(2, length(colSums(x4))-10)
+  t_end<-t_start + 10
+
   x<-c(1:nrow(x4))
   Rt<-sapply(x, f1)
   
