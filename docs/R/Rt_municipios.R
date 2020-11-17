@@ -59,7 +59,7 @@ require(EpiEstim)
       
       mun$FECHA_ACTUALIZACION<-rep(covid$FECHA_ACTUALIZACION[1], nrow(mun))
 
-      saveRDS(mun.rds)
+      saveRDS(mun, "mun.rds")
       
 
 
