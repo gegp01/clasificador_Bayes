@@ -2,8 +2,12 @@
 # SE NECESITAN LAS BASES DE DATOS mun y covid QYE SE GENERAN EN LOS PUNTOS 1 y 2 de https://gegp01.github.io/clasificador_Bayes/
 #
 # Nota: ASEGURAR QUE SE TRABAJA EN EL DIRECTORIO DE TRABAJO EN EL QUE ESTÁ EL DOCUMENTO mun.rds
-#
+
+# ELIMINA DATOS NUEVOS DEL SISTEMA
+    system("sudo rm Global_Mobility_Report.csv")
+
 # LEER DATOS DE GOOGLE MAPS  
+    
     system("wget https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv")
     google<-read.csv("Global_Mobility_Report.csv")
 
