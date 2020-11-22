@@ -61,6 +61,8 @@ require(leafletR)
   #system("rm ../mun.geojson")
   
   system("rm mun.geojson")
+  system("rm ../mun.geojson")
+
 
   # AUTOMATIZAR. ESTA INSRTUCCION EN EL SERVIDOR DEBE GUARDAR EL ARVHICO DIRECTAMENTE EN /sr/shiny-server/
   # setwd("~/COVID19_C3/html/datos/") 
