@@ -8,9 +8,9 @@ require(rgdal)
 require(leafletR)
 
 # LEER DATOS
-  mun<- readOGR(dsn = "~/COVID19_C3/municipios/", layer = "municipios_simpleX")
+  mun0<- readOGR(dsn = "poligono/", layer = "municipios_simpleX")
   
-  D<-readRDS("~/COVID19_C3/html/datos/NODOS.rds")
+  D<-mun
  
   no2<-data.frame(MUN_OFICIA=D$MUN_OFICIA
                         , CVE_ENT=D$CLAVE_ENTIDAD
@@ -55,19 +55,20 @@ require(leafletR)
   Xpalette <- colorNumeric(palette=c('#85c1e9', '#db299e'), domain=no2$wrkmxsem, na.color="transparent")
   no2$wrkmxsem_col<-Xpalette(no2$wrkmxsem)
     
-    mun@data = data.frame(mun@data, no2[match(mun$MUN_OFICIA, no2$MUN_OFICIA),])
+  mun0@data = data.frame(mun0@data, no2[match(mun0$MUN_OFICIA, no2$MUN_OFICIA),])
   
   # HAY QUE BORRAR EL ARCHIVO EXISTENTE!!!! O BUSCAR UNA FORMA DE SALTARSE LA SEGURIDAD
-
-
-system("sudo rm ~/COVID19_C3/html/unam-app/map/leaflet/datos/mun_nodos_2*")
-
+  #system("rm ../mun.geojson")
   
+  system("rm mun.geojson")
+
   # AUTOMATIZAR. ESTA INSRTUCCION EN EL SERVIDOR DEBE GUARDAR EL ARVHICO DIRECTAMENTE EN /sr/shiny-server/
-  setwd("~/COVID19_C3/html/datos/") # setwd("/srv/shyni-server/")     
+  # setwd("~/COVID19_C3/html/datos/") 
+  #setwd("../")  
 
   toGeoJSON(mun)
 
   # EDITAR EL ARCHIVO DESDE EL SISTEMA (Linux)
   system("sed -i '1s/^/ var XDATA =  /' mun.geojson")
   system("sed -i '$s/$/ ; /' mun.geojson")
+  system("cp mun.geojson ../")
