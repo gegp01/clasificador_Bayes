@@ -68,9 +68,9 @@ require(leafletR)
   # setwd("~/COVID19_C3/html/datos/") 
   #setwd("../")  
 
-  toGeoJSON(mun)
+  toGeoJSON(mun0)
 
   # EDITAR EL ARCHIVO DESDE EL SISTEMA (Linux)
-  system("sed -i '1s/^/ var XDATA =  /' mun.geojson")
-  system("sed -i '$s/$/ ; /' mun.geojson")
-  system("cp mun.geojson ../")
+  system("sed -i '1s/^/ var XDATA =  /' mun0.geojson")
+  system("sed -i '$s/$/ ; /' mun0.geojson")
+  system("cp mun0.geojson ../")
