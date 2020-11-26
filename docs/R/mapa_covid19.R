@@ -60,7 +60,7 @@ require(leafletR)
   # HAY QUE BORRAR EL ARCHIVO EXISTENTE!!!! O BUSCAR UNA FORMA DE SALTARSE LA SEGURIDAD
   #system("rm ../mun.geojson")
   
-  system("rm mun.geojson")
+  system("rm mun0.geojson")
   system("rm ../mun.geojson")
 
 
