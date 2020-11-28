@@ -40,7 +40,7 @@
       
       covid$municipio_oficial<-mun$MUN_OFICIA[match(covid$id, mun$MUN_OFICIA)] 
       
-      covid$infectado<-ifelse(covid$RESULTADO==1, 1, 0)
+      covid$infectado<-ifelse(covid$RESULTADO_LAB==1, 1, 0)
       I<-aggregate(covid$infectado, list(covid$municipio_oficial), sum)
       
       ## def<-aggregate(covid$infectado, list(covid$municipio_oficial), sum)
@@ -60,7 +60,7 @@
       I_ultimos30<-aggregate(covid$infectados_30d, list(covid$municipio_oficial), sum)
       
       
-      covid$negativo<-ifelse(covid$RESULTADO==2, 1, 0)
+      covid$negativo<-ifelse(covid$RESULTADO_LAB==2, 1, 0)
       
       S<-aggregate(covid$negativo, list(covid$municipio_oficial), sum)
   
