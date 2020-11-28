@@ -96,7 +96,7 @@
       mun$infectados30d_10milhab<-(mun$infectados30d/mun$pobtot)*10000
       
       deceso<-ifelse(is.na(covid$defuncion_julianos), 0, 1)
-      covid$deceso_positivo<-ifelse(covid$RESULTADO==1, deceso, 0)
+      covid$deceso_positivo<-ifelse(covid$RESULTADO_LAB==1, deceso, 0)
       
       death<-aggregate(covid$deceso_positivo, list(covid$municipio_oficial), sum)
       mun$deceso_positivo<-death$x[match(mun$MUN_OFICIA, death$Group.1)]
